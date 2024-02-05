@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './SearchBar.module.css';
 import { MdOutlineImageSearch } from 'react-icons/md';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 export const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -38,7 +38,6 @@ export const SearchBar = ({ onSubmit }) => {
           <MdOutlineImageSearch size="30px" />
         </button>
       </form>
-      <Toaster position="top-right" reverseOrder={true} />;
     </header>
   );
 };

@@ -13,15 +13,15 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-export const ImageModal = ({ src, alt, modalIsOpen, closeModal }) => {
+export const ImageModal = ({ urls, alt_description, modalIsOpen, closeModal }) => {
   return (
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="Example Modal"
+      contentLabel="Search Photo Modal"
     >
-      <img src={src} alt={alt} />/
+      <img src={urls.regular} alt={alt_description} />/
     </Modal>
   );
 };
