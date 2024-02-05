@@ -22,14 +22,14 @@ function App() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const { results, total_pages, per_page } = await getPhotos(query, page);
+        const { results, total_pages } = await getPhotos(query.trim(), page);
         if (results.length === 0) {
           setIsEmpty(true);
           return;
         }
         console.log(results);
         setImages(prevImages => [...prevImages, ...results]);
-        setIsVisible(page < Math.ceil(total_pages / per_page));
+        setIsVisible(total_pages !== page);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -55,10 +55,11 @@ function App() {
     <div>
       <SearchBar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
-      {isVisible && <LoadMoreBtn onClick={handleLoadMore} disabled={{ isLoading }} />}
-      {isEmpty && <p>Sorry. There are no images ... 😭</p>}
+      {isVisible && <LoadMoreBtn onClick={handleLoadMore} disabled={ isLoading } />}
+      {isEmpty && <ErrorMessage >There are no images ... 😭</ErrorMessage>
+}
       {isLoading && <Loader />}
-      {error && <ErrorMessage message={error} />}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
       <Toaster position="top-right" reverseOrder={true} />;
     </div>
   );

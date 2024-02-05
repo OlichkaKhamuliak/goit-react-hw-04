@@ -1,21 +1,21 @@
 .form {
-  width: 400px;
+  max-width: 375px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin: 0 auto;
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
   margin-top: 50px;
 }
 
 .input {
   width: 100%;
-  height: 56px;
+  height: 46px;
 
   border-style: none;
   border-bottom: 1px solid #212121;
   background-color: transparent;
 
-  padding: 16px;
-  padding-right: 40px;
   outline: none;
 
   transition: var(--animation-cubicBezier);

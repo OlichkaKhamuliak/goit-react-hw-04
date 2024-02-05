@@ -30,7 +30,6 @@ export const SearchBar = ({ onSubmit }) => {
           autoFocus
           placeholder="Search images and photos"
           name="search"
-          required
           value={query}
           onChange={handleChange}
         />

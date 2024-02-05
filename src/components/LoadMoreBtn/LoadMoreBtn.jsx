@@ -1,6 +1,8 @@
-export const LoadMoreBtn = (onClick, disabled) => {
+import css from './LoadMoreBtn.module.css';
+
+export const LoadMoreBtn = ({onClick, disabled}) => {
   return (
-    <button onClick={onClick} disabled={disabled}>
+    <button className={css.button} onClick={onClick} disabled={disabled}>
       Load more
     </button>
   );

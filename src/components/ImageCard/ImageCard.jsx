@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ImageModal } from '../ImageModal/ImageModal';
+import css from './ImageCard.module.css'
 
 export const ImageCard = ({ urls, alt_description, color }) => {
   const [showModal, setShowModal] = useState(false);
@@ -8,10 +9,10 @@ export const ImageCard = ({ urls, alt_description, color }) => {
   };
   return (
     <div>
-      <div onClick={toggle} style={{ backgroundColor: color, borderColor: color }}>
-        <img src={urls.small} alt={alt_description} />
+      <div className={css.photoCard} onClick={toggle} style={{ backgroundColor: color, borderColor: color }}>
+        <img className={css.img} src={urls.small} alt={alt_description} />
       </div>
-      <ImageModal alt={alt_description} src={urls} modalIsOpen={showModal} closeModal={toggle} />
+      <ImageModal alt={alt_description} urls={urls} modalIsOpen={showModal} closeModal={toggle} />
     </div>
   );
 };

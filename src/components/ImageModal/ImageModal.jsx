@@ -21,7 +21,7 @@ export const ImageModal = ({ urls, alt_description, modalIsOpen, closeModal }) =
       style={customStyles}
       contentLabel="Search Photo Modal"
     >
-      <img src={urls.regular} alt={alt_description} />/
+      <img src={urls.regular} alt={alt_description} />
     </Modal>
   );
 };
