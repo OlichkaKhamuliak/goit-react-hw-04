@@ -6,6 +6,7 @@ import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn';
 import { Toaster } from 'react-hot-toast';
 import { Loader } from './components/Loader/Loader';
 import { ErrorMessage } from './components/ErrorMessage/ErrorMessage';
+import css from './components/ErrorMessage/ErrorMessage.module.css';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -27,7 +28,7 @@ function App() {
           setIsEmpty(true);
           return;
         }
-        console.log(results);
+        // console.log(results);
         setImages(prevImages => [...prevImages, ...results]);
         setIsVisible(total_pages !== page);
       } catch (error) {
@@ -55,12 +56,15 @@ function App() {
     <div>
       <SearchBar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
-      {isVisible && <LoadMoreBtn onClick={handleLoadMore} disabled={ isLoading } />}
-      {isEmpty && <ErrorMessage >There are no images ... 😭</ErrorMessage>
-}
+      {isVisible && <LoadMoreBtn onClick={handleLoadMore} disabled={isLoading} />}
+      {isEmpty && <ErrorMessage>There are no images 😭</ErrorMessage>}
       {isLoading && <Loader />}
       {error && <ErrorMessage>{error}</ErrorMessage>}
-      <Toaster position="top-right" reverseOrder={true} />;
+      <Toaster
+        toastOptions={{
+          className: css.toaster,
+        }}
+      />
     </div>
   );
 }

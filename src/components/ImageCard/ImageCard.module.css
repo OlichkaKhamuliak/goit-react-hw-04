@@ -1,37 +1,42 @@
 :root {
-    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    --animation-duration: 250ms;
-  }
-
-.photoCard {
- min-width: 280px;
- padding: 10px;
- margin-left: 10px;
- margin-right: 10px;
-
- border-radius: 5%;
- transition: transform var(--animation-duration) var(--timing-function);
- height: 290px;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
 }
 
-@media screen and (min-width: 768px) { 
-    .photoCard {
-        height: 450px;
-        margin-left: 0;
-        margin-right: 0;
-    }
+.photoCard {
+  padding: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
 
+  border-radius: 5%;
+  transition: transform var(--animation-duration) var(--timing-function);
+  height: 100%;
+  max-width: 400px;
+}
+
+@media screen and (min-width: 768px) {
+  .photoCard {
+    /* height: 210px; */
+    margin-left: 0;
+    margin-right: 0;
+    padding: 6px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .photoCard {
+    padding: 5px;
+  }
 }
 
 .photoCard:hover {
- transform: scale(1.03);
- box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
-  } 
+  transform: scale(1.03);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
 
-  .img {
-    border-radius: 5%;
-    height: 100%;
-    object-fit: cover;
-    margin: 0 auto;
+.img {
+  border-radius: 5%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
 }

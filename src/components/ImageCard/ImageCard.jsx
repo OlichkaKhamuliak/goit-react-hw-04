@@ -12,8 +12,6 @@ export const ImageCard = ({
   photographer,
   instagramId,
 }) => {
-  console.log(numberOfLikes);
-
   const [showModal, setShowModal] = useState(false);
   const toggle = () => {
     setShowModal(prevModal => !prevModal);
