@@ -6,4 +6,14 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 5px;
+  /* width: auto; */
+}
+.textWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.text {
+  /* max-width: 200px; */
 }

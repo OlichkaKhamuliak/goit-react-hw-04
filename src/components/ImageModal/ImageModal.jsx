@@ -42,25 +42,28 @@ export const ImageModal = ({
       <img src={urls.regular} alt={alt} />
       <div className={css.description}>
         {descriptions !== null && (
-          <p>
-            {' '}
-            <LuSubtitles /> {descriptions}
-          </p>
+          <div className={css.textWrap}>
+            <LuSubtitles size="20" />
+            <p className={css.text}>{descriptions}</p>
+          </div>
         )}
         {likes !== null && (
-          <p>
-            <TiHeart /> {likes}
-          </p>
+          <div className={css.textWrap}>
+            <TiHeart size="20" />
+            <p>{likes}</p>
+          </div>
         )}
         {location !== null && (
-          <p>
-            <IoLocationOutline /> {location}
-          </p>
+          <div className={css.textWrap}>
+            <IoLocationOutline size="20" />
+            <p>{location}</p>
+          </div>
         )}
         {photographerName !== null && (
-          <p>
-            <MdPhotoCameraFront /> {photographerName}
-          </p>
+          <div className={css.textWrap}>
+            <MdPhotoCameraFront size="20" />
+            <p>{photographerName}</p>
+          </div>
         )}
         {instId !== null && (
           <a
@@ -69,9 +72,10 @@ export const ImageModal = ({
             rel="noopener noreferrer"
             aria-label="Instagram icon"
           >
-            <p>
-              <FaInstagram /> @{instId}
-            </p>
+            <div className={css.textWrap}>
+              <FaInstagram size="20" />
+              <p>@{instId}</p>
+            </div>
           </a>
         )}
       </div>
