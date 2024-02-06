@@ -4,12 +4,22 @@
   }
 
 .photoCard {
- min-width: 300px;
+ min-width: 280px;
  padding: 10px;
- margin: 10px;
+ margin-left: 10px;
+ margin-right: 10px;
+
  border-radius: 5%;
  transition: transform var(--animation-duration) var(--timing-function);
  height: 290px;
+}
+
+@media screen and (min-width: 768px) { 
+    .photoCard {
+        height: 450px;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
 }
 
@@ -23,4 +33,5 @@
     border-radius: 5%;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
 }

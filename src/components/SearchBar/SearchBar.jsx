@@ -34,7 +34,8 @@ export const SearchBar = ({ onSubmit }) => {
           onChange={handleChange}
         />
         <button className={css.button} type="submit">
-          <MdOutlineImageSearch size="30px" />
+          <MdOutlineImageSearch            className={css.svg}
+ size="30px" />
         </button>
       </form>
     </header>
