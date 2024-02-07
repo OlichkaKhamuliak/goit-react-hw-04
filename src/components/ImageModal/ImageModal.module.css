@@ -1,12 +1,21 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
 .description {
   background-color: #fff;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   gap: 5px;
-  /* width: auto; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.icon {
+  flex-shrink: 0; /* Заборона зменшення розміру іконки */
 }
 .textWrap {
   display: flex;
@@ -14,6 +23,31 @@
   align-items: center;
   gap: 10px;
 }
-.text {
-  /* max-width: 200px; */
+@media screen and (min-width: 768px) {
+  .description {
+    font-size: 20px;
+    gap: 10px;
+  }
+  .icon {
+    height: 25px;
+    width: 25px;
+  }
+  .img {
+    width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .description {
+    font-size: 25px;
+    gap: 13px;
+  }
+  .icon {
+    height: 30px;
+    width: 30px;
+  }
+  .img {
+    width: 700px;
+  }
 }

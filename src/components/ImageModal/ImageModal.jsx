@@ -5,6 +5,8 @@ import { TiHeart } from 'react-icons/ti';
 import { IoLocationOutline } from 'react-icons/io5';
 import { MdPhotoCameraFront } from 'react-icons/md';
 import { FaInstagram } from 'react-icons/fa';
+import { Loader } from '../Loader/Loader';
+import { useState } from 'react';
 
 Modal.setAppElement('#root');
 
@@ -20,6 +22,11 @@ export const ImageModal = ({
   photographerName,
   instId,
 }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoading = loading => {
+    setIsLoading(loading);
+  };
+
   const customStyles = {
     content: {
       top: '50%',
@@ -30,6 +37,9 @@ export const ImageModal = ({
       transform: 'translate(-50%, -50%)',
       backgroundColor: color,
       borderColor: color,
+      width: '80%',
+      padding: '7px',
+      maxHeight: '90%',
     },
   };
   return (
@@ -39,45 +49,48 @@ export const ImageModal = ({
       style={customStyles}
       contentLabel="Search Photo Modal"
     >
-      <img src={urls.regular} alt={alt} />
-      <div className={css.description}>
-        {descriptions !== null && (
-          <div className={css.textWrap}>
-            <LuSubtitles size="20" />
-            <p className={css.text}>{descriptions}</p>
-          </div>
-        )}
-        {likes !== null && (
-          <div className={css.textWrap}>
-            <TiHeart size="20" />
-            <p>{likes}</p>
-          </div>
-        )}
-        {location !== null && (
-          <div className={css.textWrap}>
-            <IoLocationOutline size="20" />
-            <p>{location}</p>
-          </div>
-        )}
-        {photographerName !== null && (
-          <div className={css.textWrap}>
-            <MdPhotoCameraFront size="20" />
-            <p>{photographerName}</p>
-          </div>
-        )}
-        {instId !== null && (
-          <a
-            href={`https://www.instagram.com/${instId}/`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram icon"
-          >
+      {isLoading && <Loader />}
+      <div className={css.modal}>
+        <img className={css.img} src={urls.regular} alt={alt} onLoad={() => handleLoading(false)} />
+        <div className={css.description}>
+          {descriptions !== null && (
             <div className={css.textWrap}>
-              <FaInstagram size="20" />
-              <p>@{instId}</p>
+              <LuSubtitles className={css.icon} size="20" />
+              <p>{descriptions}</p>
             </div>
-          </a>
-        )}
+          )}
+          {likes !== null && (
+            <div className={css.textWrap}>
+              <TiHeart className={css.icon} size="20" />
+              <p>{likes}</p>
+            </div>
+          )}
+          {location !== null && (
+            <div className={css.textWrap}>
+              <IoLocationOutline className={css.icon} size="20" />
+              <p>{location}</p>
+            </div>
+          )}
+          {photographerName !== null && (
+            <div className={css.textWrap}>
+              <MdPhotoCameraFront className={css.icon} size="20" />
+              <p>{photographerName}</p>
+            </div>
+          )}
+          {instId !== null && (
+            <a
+              href={`https://www.instagram.com/${instId}/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram icon"
+            >
+              <div className={css.textWrap}>
+                <FaInstagram className={css.icon} size="20" />
+                <p>@{instId}</p>
+              </div>
+            </a>
+          )}
+        </div>
       </div>
     </Modal>
   );
