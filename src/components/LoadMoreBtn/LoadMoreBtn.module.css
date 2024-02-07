@@ -23,9 +23,3 @@
   box-shadow: var(--shadow-small);
   background-color: var(--color-darkviolet);
 }
-
-.button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  box-shadow: none;
-}

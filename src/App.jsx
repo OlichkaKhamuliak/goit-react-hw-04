@@ -60,15 +60,19 @@ function App() {
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
+    visibleBtn(true);
   };
   return (
     <div>
       <SearchBar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
       {emptyInput && <ErrorMessage>Please enter text to search images.</ErrorMessage>}
-      {visibleBtn && <LoadMoreBtn onClick={handleLoadMore} disabled={isLoading} />}
       {emptyResults && <ErrorMessage>There are no images 😭</ErrorMessage>}
-      {isLoading && <Loader className={style.mainLoader} />}
+      {isLoading ? (
+        <Loader className={style.mainLoader} />
+      ) : (
+        visibleBtn && <LoadMoreBtn onClick={handleLoadMore} />
+      )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <Toaster
         toastOptions={{
