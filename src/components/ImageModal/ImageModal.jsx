@@ -5,8 +5,8 @@ import { TiHeart } from 'react-icons/ti';
 import { IoLocationOutline } from 'react-icons/io5';
 import { MdPhotoCameraFront } from 'react-icons/md';
 import { FaInstagram } from 'react-icons/fa';
-import { Loader } from '../Loader/Loader';
 import { useState } from 'react';
+import { ModalLoader } from '../Loader/Loader';
 
 Modal.setAppElement('#root');
 
@@ -57,7 +57,7 @@ export const ImageModal = ({
             alt={alt}
             onLoad={() => handleLoading(false)}
           />
-          {isLoading && <Loader className={css.modalLoader} />}
+          {isLoading && <ModalLoader />}
         </div>
         <div className={css.description}>
           {descriptions !== null && (

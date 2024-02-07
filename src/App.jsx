@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import { Loader } from './components/Loader/Loader';
 import { ErrorMessage } from './components/ErrorMessage/ErrorMessage';
 import css from './components/ErrorMessage/ErrorMessage.module.css';
+import style from './components/Loader/Loader.module.css';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -65,10 +66,9 @@ function App() {
       <SearchBar onSubmit={handleSubmit} />
       {images.length > 0 && <ImageGallery images={images} />}
       {emptyInput && <ErrorMessage>Please enter text to search images.</ErrorMessage>}
-
       {visibleBtn && <LoadMoreBtn onClick={handleLoadMore} disabled={isLoading} />}
       {emptyResults && <ErrorMessage>There are no images 😭</ErrorMessage>}
-      {isLoading && <Loader />}
+      {isLoading && <Loader className={style.mainLoader} />}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <Toaster
         toastOptions={{
