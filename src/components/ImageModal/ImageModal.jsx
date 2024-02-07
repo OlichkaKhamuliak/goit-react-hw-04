@@ -49,9 +49,16 @@ export const ImageModal = ({
       style={customStyles}
       contentLabel="Search Photo Modal"
     >
-      {isLoading && <Loader />}
       <div className={css.modal}>
-        <img className={css.img} src={urls.regular} alt={alt} onLoad={() => handleLoading(false)} />
+        <div className={css.imgContainer}>
+          <img
+            className={css.img}
+            src={urls.regular}
+            alt={alt}
+            onLoad={() => handleLoading(false)}
+          />
+          {isLoading && <Loader className={css.modalLoader} />}
+        </div>
         <div className={css.description}>
           {descriptions !== null && (
             <div className={css.textWrap}>
