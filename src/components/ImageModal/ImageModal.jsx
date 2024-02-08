@@ -37,7 +37,7 @@ export const ImageModal = ({
       transform: 'translate(-50%, -50%)',
       backgroundColor: color,
       borderColor: color,
-      width: '80%',
+      // width: '50%',
       padding: '7px',
       maxHeight: '90%',
     },

@@ -75,6 +75,10 @@ function App() {
       )}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       <Toaster
+        containerStyle={{
+          left: 0,
+          right: 0,
+        }}
         toastOptions={{
           className: css.toaster,
         }}

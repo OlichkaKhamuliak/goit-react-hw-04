@@ -1,8 +1,8 @@
 :root {
   /*colors*/
   --color-darkviolet: #270545;
-  --color-form: #9a39efa2;
-  --color-violet: #462562;
+  --color-form: #9a39efd8;
+  --color-violet: #450e76;
   --color-mainBackground: linear-gradient(to bottom, #d1b3ec, #d1b3ec8e);
 
   /*font*/
@@ -24,7 +24,7 @@
 */
 .go4109123758 {
   backdrop-filter: blur(10px) !important;
-  margin-top: 50px !important;
+  margin-top: 43px !important;
 }
 .go2072408551 {
   color: black !important;

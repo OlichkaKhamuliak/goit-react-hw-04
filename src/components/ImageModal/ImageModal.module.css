@@ -13,6 +13,10 @@
   gap: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 290px;
+}
+.img {
+  width: 290px;
 }
 .icon {
   flex-shrink: 0; /* Заборона зменшення розміру іконки */
@@ -30,6 +34,7 @@
   .description {
     font-size: 20px;
     gap: 10px;
+    width: 500px;
   }
   .icon {
     height: 25px;
@@ -45,12 +50,13 @@
   .description {
     font-size: 25px;
     gap: 13px;
+    width: 900px;
   }
   .icon {
     height: 30px;
     width: 30px;
   }
   .img {
-    width: 700px;
+    width: 900px;
   }
 }
