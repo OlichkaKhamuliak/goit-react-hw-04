@@ -37,9 +37,10 @@ export const ImageModal = ({
       transform: 'translate(-50%, -50%)',
       backgroundColor: color,
       borderColor: color,
-      // width: '50%',
+      maxWidth: '80%',
       padding: '7px',
-      maxHeight: '90%',
+      maxHeight: '70%',
+      marginTop: '3px',
     },
   };
   return (
@@ -91,7 +92,7 @@ export const ImageModal = ({
               rel="noopener noreferrer"
               aria-label="Instagram icon"
             >
-              <div className={css.textWrap}>
+              <div className={`${css.textWrap} ${css.link}`}>
                 <FaInstagram className={css.icon} size="20" />
                 <p>@{instId}</p>
               </div>

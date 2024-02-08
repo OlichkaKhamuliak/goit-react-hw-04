@@ -46,7 +46,7 @@
   margin-left: 10px;
   background-color: rgb(235, 170, 50);
   color: var(--color-violet);
-  transition: color var(--animation-cubicBezier) background-color var(--animation-cubicBezier);
+  transition: color var(--animation-cubicBezier), background-color var(--animation-cubicBezier);
 }
 
 .button:hover {

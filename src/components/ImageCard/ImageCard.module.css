@@ -9,7 +9,7 @@
   margin-right: 10px;
 
   border-radius: 5%;
-  transition: transform var(--animation-duration) var(--timing-function);
+  transition: transform var(--animation-duration);
   height: 100%;
   max-width: 400px;
 }
@@ -27,10 +27,16 @@
     padding: 5px;
   }
 }
-
-.photoCard:hover {
+.photoCard:active {
   transform: scale(1.03);
   box-shadow: var(--shadow-regular);
+}
+@media (hover: hover) {
+  .photoCard:hover,
+  .photoCard:focus {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-regular);
+  }
 }
 
 .img {

@@ -13,11 +13,11 @@
   gap: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 290px;
+  /* width: 290px; */
 }
-.img {
+/* .img {
   width: 290px;
-}
+} */
 .icon {
   flex-shrink: 0; /* Заборона зменшення розміру іконки */
 }
@@ -29,6 +29,44 @@
 }
 .imgContainer {
   position: relative;
+}
+.link {
+  transition: color var(--animation-cubicBezier), background var(--animation-cubicBezier);
+}
+.link:active {
+  background: linear-gradient(
+    90deg,
+    rgba(123, 51, 248, 1) 0%,
+    rgba(187, 2, 232, 1) 13%,
+    rgba(251, 0, 124, 1) 26%,
+    rgba(255, 116, 3, 1) 39%,
+    rgba(255, 203, 0, 1) 52%,
+    rgba(255, 116, 3, 1) 65%,
+    rgba(251, 0, 124, 1) 78%,
+    rgba(187, 2, 232, 1) 89%,
+    rgba(123, 51, 248, 1) 100%
+  );
+  border-radius: 2px;
+  color: rgb(255, 255, 255);
+}
+@media (hover: hover) {
+  .link:hover,
+  .link:focus {
+    background: linear-gradient(
+      90deg,
+      rgba(123, 51, 248, 1) 0%,
+      rgba(187, 2, 232, 1) 13%,
+      rgba(251, 0, 124, 1) 26%,
+      rgba(255, 116, 3, 1) 39%,
+      rgba(255, 203, 0, 1) 52%,
+      rgba(255, 116, 3, 1) 65%,
+      rgba(251, 0, 124, 1) 78%,
+      rgba(187, 2, 232, 1) 89%,
+      rgba(123, 51, 248, 1) 100%
+    );
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+  }
 }
 @media screen and (min-width: 768px) {
   .description {
@@ -50,13 +88,13 @@
   .description {
     font-size: 25px;
     gap: 13px;
-    width: 900px;
+    width: 650px;
   }
   .icon {
     height: 30px;
     width: 30px;
   }
   .img {
-    width: 900px;
+    width: 650px;
   }
 }
