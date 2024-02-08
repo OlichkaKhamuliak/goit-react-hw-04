@@ -47,3 +47,8 @@
     margin-right: 10px;
   }
 }
+
+/* Заблокувати прокрутку та фіксувати модальне вікно */
+body.ReactModal__Body--open {
+  overflow: hidden;
+}

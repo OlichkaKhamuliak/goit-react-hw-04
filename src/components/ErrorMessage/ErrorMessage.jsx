@@ -6,7 +6,7 @@ export const ErrorMessage = ({ children }) => {
     // Викликаємо toast.error при відображенні компонента, використовуючи setTimeout
     const timeoutId = setTimeout(() => {
       toast.error(children, {
-        duration: 2500,
+        duration: 2000,
       });
     }, 0);
 

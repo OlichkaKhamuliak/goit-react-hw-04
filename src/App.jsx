@@ -60,7 +60,7 @@ function App() {
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
-    visibleBtn(true);
+    setVisibleBtn(true);
   };
   return (
     <div>
