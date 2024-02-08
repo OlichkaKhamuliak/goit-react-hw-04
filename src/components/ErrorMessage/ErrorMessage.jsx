@@ -5,7 +5,9 @@ export const ErrorMessage = ({ children }) => {
   useEffect(() => {
     // Викликаємо toast.error при відображенні компонента, використовуючи setTimeout
     const timeoutId = setTimeout(() => {
-      toast.error(children);
+      toast.error(children, {
+        duration: 2500,
+      });
     }, 0);
 
     // Забезпечимо видалення таймауту під час очищення компонента

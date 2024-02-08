@@ -19,13 +19,29 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [emptyInput, setEmptyInput] = useState(false);
 
+  const handleSubmit = async newQuery => {
+    if (!newQuery.trim()) {
+      setEmptyInput(true);
+      // setImages([]);
+      // setVisibleBtn(false);
+      return;
+    }
+    setEmptyInput(false);
+    setQuery(`${Date.now()}/${newQuery}`);
+    setPage(1);
+    setImages([]);
+    setEmptyResults(false);
+    setVisibleBtn(false);
+    setError(false);
+  };
+
   useEffect(() => {
     if (!query) return;
 
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const { results, total_pages } = await getPhotos(query.trim(), page);
+        const { results, total_pages } = await getPhotos(query.trim().split('/')[1], page);
         if (results.length === 0) {
           setEmptyResults(true);
           return;
@@ -41,22 +57,6 @@ function App() {
     };
     fetchData();
   }, [query, page]);
-
-  const handleSubmit = value => {
-    if (!value.trim()) {
-      setEmptyInput(true);
-      setImages([]);
-      setVisibleBtn(false);
-      return;
-    }
-    setEmptyInput(false);
-    setQuery(value);
-    setPage(1);
-    setImages([]);
-    setEmptyResults(false);
-    setVisibleBtn(false);
-    setError(false);
-  };
 
   const handleLoadMore = () => {
     setPage(prevPage => prevPage + 1);
